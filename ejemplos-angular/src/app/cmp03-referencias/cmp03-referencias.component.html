@@ -1,0 +1,8 @@
+<h2>03. Referencias</h2>
+
+<video width="200" src="assets/video.mp4" #video></video>
+
+<button type="button" (click)="play(video)">Play</button>
+<button type="button" (click)="pause(video)">Pause</button>
+
+<input type="range" min="0" max="100" (input)="cambiarVolumen(video, $event)">
