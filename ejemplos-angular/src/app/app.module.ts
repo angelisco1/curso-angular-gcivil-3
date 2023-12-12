@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { Cmp02InputYOutputComponent } from './cmp02-input-y-output/cmp02-input-y-output.component';
 import { SugusComponent } from './cmp02-input-y-output/sugus/sugus.component';
 import { Cmp03ReferenciasComponent } from './cmp03-referencias/cmp03-referencias.component';
+import { ProductoComponent } from './cmp02-input-y-output/producto/producto.component';
+import { Cmp04DirectivasComponent } from './cmp04-directivas/cmp04-directivas.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { Cmp03ReferenciasComponent } from './cmp03-referencias/cmp03-referencias
     Cmp02InputYOutputComponent,
     SugusComponent,
     Cmp03ReferenciasComponent,
+    ProductoComponent,
+    Cmp04DirectivasComponent,
   ],
   imports: [
     BrowserModule,

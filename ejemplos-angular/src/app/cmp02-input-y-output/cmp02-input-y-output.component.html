@@ -1,17 +1,29 @@
 <h2>02. @Input y @Output</h2>
 
-<app-sugus color="red" sabor="fresa"></app-sugus>
+<div class="d-flex">
 
-<app-sugus color="orange" sabor="naranja"></app-sugus>
+  <app-sugus color="red" sabor="fresa"></app-sugus>
 
-<app-sugus></app-sugus>
+  <app-sugus color="orange" sabor="naranja"></app-sugus>
 
-<app-sugus color="blue" sabor="piña"></app-sugus>
+  <app-sugus></app-sugus>
 
-<app-sugus [color]="colorDinamico" [sabor]="saborDinamico"></app-sugus>
-<input type="text" [(ngModel)]="saborDinamico">
-<input type="text" [value]="colorDinamico" (input)="cambiarColor($event)">
+  <app-sugus color="blue" sabor="piña"></app-sugus>
 
-<!-- <input type=" text">
+  <app-sugus [color]="colorDinamico" [sabor]="saborDinamico"></app-sugus>
+  <input type="text" [(ngModel)]="saborDinamico">
+  <input type="text" [value]="colorDinamico" (input)="cambiarColor($event)">
+
+  <!-- <input type=" text">
 <input type="color">
 <input type="date"> -->
+
+</div>
+
+<div class="d-flex">
+  <app-producto color="blue" sabor="piña" (onAddToCart)="addToCart($event)"></app-producto>
+  <app-producto color="orange" sabor="naranja" (onAddToCart)="addToCart($event)"></app-producto>
+  <app-producto color="red" sabor="fresa" (onAddToCart)="addToCart($event)"></app-producto>
+</div>
+
+<p>{{ carritoSugus | json }}</p>

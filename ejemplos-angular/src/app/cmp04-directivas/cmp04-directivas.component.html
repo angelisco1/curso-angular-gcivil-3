@@ -1,0 +1,67 @@
+<h2>04. Directivas</h2>
+
+<h3>De atributo</h3>
+<!-- ngModel, ngStyle, ngClass, formGroup formControlName, routerLink -->
+<p [ngClass]="clases">Este texto aparece en naranja y el fondo en negro</p>
+
+<div>
+  <label for="letraNaranja">Letra naranja:</label>
+
+  <input type="radio" name="letraNaranja" (change)="toggleLetraNaranja(true)"> Activar
+  <input type="radio" name="letraNaranja" (change)="toggleLetraNaranja(false)"> Desactivar
+</div>
+
+<h3>Estructurales</h3>
+
+<ng-container *ngIf="isAuthenticated; else login">
+  <button type="button">Logout</button>
+  <p>Bienvenido usuario</p>
+</ng-container>
+
+<ng-template #login>
+  <button type="button">Login</button>
+</ng-template>
+
+<!-- @if isAuthenticated {
+  <button>Logout</button>
+} else {
+  <button>Login</button>
+} -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Nº</th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let item of listaProductos; let i = index; let isFirst = first; let isLast = last; let isPar = even; let total = count"
+      [ngClass]="{borderTop: isFirst, borderBottom: isLast, filaPar: isPar}">
+      <td>{{i + 1}} / {{total}}</td>
+      <td>{{item.producto}}</td>
+      <td>{{item.cantidad}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div>
+  <label for="pais">País:</label>
+  <select name="pais" id="pais" [(ngModel)]="paisSeleccionado">
+    <option *ngFor="let pais of listaPaises" [value]="pais">{{pais}}</option>
+  </select>
+</div>
+
+<div [ngSwitch]="paisSeleccionado">
+  <ng-container *ngFor="let pais of listaPaises">
+    <p *ngSwitchCase="pais">Voy a viajar a {{pais}}</p>
+  </ng-container>
+  <!-- <p *ngSwitchCase="'España'">Voy a viajar a España</p>
+  <p *ngSwitchCase="'Francia'">Voy a viajar a Francia</p>
+  <p *ngSwitchCase="'Portugal'">Voy a viajar a Portugal</p>
+  <p *ngSwitchCase="'Alemania'">Voy a viajar a Alemania</p> -->
+  <p *ngSwitchDefault>No se donde voy</p>
+</div>
