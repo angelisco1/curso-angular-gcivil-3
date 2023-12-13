@@ -1,0 +1,27 @@
+<form (ngSubmit)="registro(form)" #form="ngForm">
+  <div>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" [ngModel]="datos.username" required #username="ngModel">
+
+    <app-error-form *ngIf="username.invalid && username.touched" [errores]="username.errors"></app-error-form>
+
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" [ngModel]="datos.email" required [pattern]="patternEmail"
+      #email="ngModel">
+
+    <app-error-form *ngIf="email.invalid && email.touched" [errores]="email.errors"></app-error-form>
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" [ngModel]="datos.password" required minlength="8"
+      #password="ngModel">
+
+    <app-error-form *ngIf="password.invalid && password.touched" [errores]="password.errors"></app-error-form>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Registro</button>
+</form>

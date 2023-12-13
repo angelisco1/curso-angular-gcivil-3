@@ -1,0 +1,24 @@
+<form [formGroup]="form" (ngSubmit)="registro()">
+  <div>
+    <label for="username">Username</label>
+    <input type="text" id="username" formControlName="username">
+
+    <app-error-form *ngIf="mostrarErroresUsername" [errores]="erroresUsername"></app-error-form>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input type="text" id="email" formControlName="email">
+
+    <app-error-form *ngIf="mostrarErroresEmail" [errores]="erroresEmail"></app-error-form>
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input type="password" id="password" formControlName="password">
+
+    <app-error-form *ngIf="mostrarErroresPassword" [errores]="erroresPassword"></app-error-form>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Registro</button>
+</form>

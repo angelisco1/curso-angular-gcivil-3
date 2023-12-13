@@ -1,0 +1,20 @@
+<h2>05. Pipes</h2>
+
+
+<div>
+  <p>{{producto.nombre | titlecase}}</p>
+  <p>{{producto.precio | currency:currencyCode | esCurrency}}</p>
+  <p>{{producto.fechaLanzamiento | date:'dd/MM/yyyy'}}</p>
+  <p>{{producto.descripcion | removeWords:wordsToRemove | slice:0:420}}...</p>
+</div>
+
+<div>
+  <p>{{producto.nombre}}</p>
+  <p>{{producto.precio}}</p>
+  <p>{{producto.fechaLanzamiento}}</p>
+  <p>{{producto.descripcion}}</p>
+</div>
+
+<button type="button" (click)="preguntaAChuck()">¿Qué diría Chuck Norris?</button>
+
+<p>Chuck dice: {{fraseChuck | async}}</p>

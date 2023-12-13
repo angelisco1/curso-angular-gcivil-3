@@ -1,1 +1,10 @@
-<p>plato works!</p>
+<div class="d-flex mt-3">
+  <div>
+    <img [src]="plato.foto" alt="Imagen de {{plato.nombre}}" width="170">
+  </div>
+  <div class="mx-3">
+    <h3>{{plato.nombre}}</h3>
+    <p>{{plato.descripcion}}</p>
+    <p>{{plato.precio}}</p>
+  </div>
+</div>
