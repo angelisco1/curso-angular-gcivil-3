@@ -16,6 +16,14 @@ import { Cmp06FormulariosComponent } from './cmp06-formularios/cmp06-formularios
 import { PlantillaComponent } from './cmp06-formularios/plantilla/plantilla.component';
 import { ReactivoComponent } from './cmp06-formularios/reactivo/reactivo.component';
 import { ErrorFormComponent } from './cmp06-formularios/error-form/error-form.component';
+import { Cmp07RoutingComponent } from './cmp07-routing/cmp07-routing.component';
+import { InicioComponent } from './cmp07-routing/inicio/inicio.component';
+import { NuevoUsuarioComponent } from './cmp07-routing/nuevo-usuario/nuevo-usuario.component';
+import { AppRoutingModule } from './cmp07-routing/app.routes';
+import { ErrorComponent } from './cmp07-routing/error/error.component';
+import { InfoUsuarioComponent } from './cmp07-routing/info-usuario/info-usuario.component';
+import { Cmp08ServiciosComponent } from './cmp08-servicios/cmp08-servicios.component';
+import { ObservablesComponent } from './cmp08-servicios/observables/observables.component';
 
 @NgModule({
   declarations: [
@@ -33,11 +41,19 @@ import { ErrorFormComponent } from './cmp06-formularios/error-form/error-form.co
     PlantillaComponent,
     ReactivoComponent,
     ErrorFormComponent,
+    Cmp07RoutingComponent,
+    InicioComponent,
+    NuevoUsuarioComponent,
+    ErrorComponent,
+    InfoUsuarioComponent,
+    Cmp08ServiciosComponent,
+    ObservablesComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

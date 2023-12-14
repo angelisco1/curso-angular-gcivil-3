@@ -1,0 +1,11 @@
+<h3>Inicio</h3>
+
+<ul>
+  <li *ngFor="let usuario of usuarios">
+    <a [routerLink]="['/usuarios', usuario.id, 'info']">
+      {{usuario.nombre}}
+    </a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
