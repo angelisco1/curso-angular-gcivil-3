@@ -1,1 +1,15 @@
-<app-plato *ngFor="let item of listaPlatos" [plato]="item"></app-plato>
+<div class="container">
+
+  <ng-container *ngIf="restaurante; else loading">
+
+    <h1>Carta de {{restaurante.restaurante}}</h1>
+
+    <app-plato *ngFor="let item of restaurante.carta" [plato]="item"></app-plato>
+
+  </ng-container>
+
+  <ng-template #loading>
+    <p>Loading...</p>
+  </ng-template>
+
+</div>

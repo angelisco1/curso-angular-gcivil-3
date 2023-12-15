@@ -1,0 +1,10 @@
+<div class="container">
+
+  <div *ngFor="let restaurante of restaurantes">
+    <a [routerLink]="['/carta-restaurante', restaurante.id]">{{restaurante.restaurante}}</a>
+
+    <qr-code value="http://localhost:4200/carta-restaurante/{{restaurante.id}}" size="150"></qr-code>
+
+  </div>
+
+</div>
